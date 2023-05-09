@@ -15,5 +15,10 @@ public class App {
        
        Employee e=context.getBean("e",Employee.class);
        System.out.println(e);
+       
+       
+       Coach coach = context.getBean("coach", Coach.class);
+       
+       System.out.println(coach.getDailyWorkout());
     }
 }

@@ -13,4 +13,6 @@
 		<property name="lastName" value="public" />
 		<property name="email" value="marry@email.com" />
 	</bean>
+	
+	<bean name="coach" class="com.cgi.SwimmingCoach"/>
 </beans>
