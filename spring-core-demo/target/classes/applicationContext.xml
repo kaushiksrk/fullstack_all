@@ -7,11 +7,21 @@
 		<property name="personId" value="101" />
 		<property name="personName" value="Joh  Doe" />
 	</bean>
-	<bean name="e" class="com.cgi.Employee">
+	
+	<!-- getters and setters -->
+	<!-- <bean name="e" class="com.cgi.Employee">
 		<property name="employeeId" value="100" />
 		<property name="firstName" value="marry" />
 		<property name="lastName" value="public" />
 		<property name="email" value="marry@email.com" />
+	</bean> -->
+	
+	<!-- Constrcutor Args -->
+	<bean name="e" class="com.cgi.Employee">
+		<constructor-arg name="employeeId" value="101"></constructor-arg>
+		<constructor-arg name="firstName" value="marry"></constructor-arg>
+		<constructor-arg name="lastName" value="public"></constructor-arg>
+		<constructor-arg name="email" value="marry@email.com"></constructor-arg>
 	</bean>
 	
 	<bean name="coach" class="com.cgi.SwimmingCoach"/>
