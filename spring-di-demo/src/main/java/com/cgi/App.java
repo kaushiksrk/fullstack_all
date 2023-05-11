@@ -16,5 +16,10 @@ public class App
         Coach theCoach=context.getBean("coach",Coach.class);
         
         System.out.println(theCoach.getDailyWorkout()+" ===> "+theCoach.getDailyFortune());
+        
+        
+        Person person = context.getBean("person",Person.class);
+        
+        System.out.println(person);
     }
 }

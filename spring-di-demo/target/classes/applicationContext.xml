@@ -3,10 +3,24 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="fortuneService" class="com.cgi.HappyFortuneService">
-</bean>
-<bean id="coach" class="com.cgi.CricketCoach">
-<constructor-arg name="fortuneService" ref="fortuneService"/>
-</bean>
+	<bean id="fortuneService" class="com.cgi.HappyFortuneService"/>
+
+	<bean id="coach" class="com.cgi.CricketCoach">
+		<constructor-arg name="fortuneService" ref="fortuneService"/>
+	</bean>
+
+
+	<bean name="address" class="com.cgi.Address">
+		<constructor-arg name="addr1" value="Chennai"></constructor-arg>
+		<constructor-arg name="addr2" value="Tamil Nadu"></constructor-arg>
+		<constructor-arg name="pincode" value="600024"></constructor-arg>
+	</bean>
+	
+	<bean name="person" class="com.cgi.Person">
+		<constructor-arg name="address" ref="address"></constructor-arg>
+		<property name="name" value="Kaushik"></property>
+		<property name="age" value="35"></property>
+		<property name="mobile" value="1234567890"></property>
+	</bean>
 
 </beans>
