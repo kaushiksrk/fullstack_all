@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<bean id="fortuneService" class="com.cgi.HappyFortuneService"/>
+
+	<context:property-placeholder
+		location="classpath:app.properties" />
+
+
+	<bean id="fortuneService" class="com.cgi.HappyFortuneService" />
 
 	<bean id="coach" class="com.cgi.CricketCoach">
-		<constructor-arg name="fortuneService" ref="fortuneService"/>
+		<constructor-arg name="fortuneService"
+			ref="fortuneService" />
 	</bean>
 
 
@@ -15,12 +23,12 @@
 		<constructor-arg name="addr2" value="Tamil Nadu"></constructor-arg>
 		<constructor-arg name="pincode" value="600024"></constructor-arg>
 	</bean>
-	
+
 	<bean name="person" class="com.cgi.Person">
 		<constructor-arg name="address" ref="address"></constructor-arg>
-		<property name="name" value="Kaushik"></property>
-		<property name="age" value="35"></property>
-		<property name="mobile" value="1234567890"></property>
+		<property name="name" value="${person.name}"></property>
+		<property name="age" value="${person.age}"></property>
+		<property name="mobile" value="${person.mobile}"></property>
 	</bean>
 
 </beans>
